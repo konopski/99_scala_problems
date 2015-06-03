@@ -1,3 +1,5 @@
+package konopski.ninety.nine { 
+  object p01 {
 def last[A](in: List[A]): A = {
   def l[A](in: List[A], el: A): A = {
     if(in.isEmpty) el
@@ -8,3 +10,5 @@ def last[A](in: List[A]): A = {
 }
 
 println (last(List(1, 1, 2, 3, 5, 8)))
+  }
+}

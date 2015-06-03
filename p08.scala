@@ -1,3 +1,5 @@
+package konopski.ninety.nine { 
+  object p08 {
 def compress[A](list: List[A]) = {
   def compr1(list: List[A], prev: A, acc: List[A]): List[A]= {
     if(list.isEmpty) acc 
@@ -14,3 +16,5 @@ def compress[A](list: List[A]) = {
 
 println( compress(List('a)) )
 println( compress(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e)) )
+  }
+}

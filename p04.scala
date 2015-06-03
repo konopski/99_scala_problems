@@ -1,3 +1,5 @@
+package konopski.ninety.nine { 
+  object p04 {
 def length[A](in: List[A]) = {
   
   def l[A](in: List[A], cnt: Int): Int = {
@@ -8,3 +10,5 @@ def length[A](in: List[A]) = {
 }
 
 print(length(List(1, 1, 2, 3, 5, 8)))
+  }
+}

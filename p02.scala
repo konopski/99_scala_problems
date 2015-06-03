@@ -1,3 +1,5 @@
+package konopski.ninety.nine { 
+  object p02 {
 def penultimate[A](in : List[A] ) = {
   def p[A](in: List[A], prev: A) : A = {
     if(in.tail.isEmpty) prev
@@ -8,3 +10,5 @@ def penultimate[A](in : List[A] ) = {
 }
 
 println(penultimate(List(1, 1, 2, 3, 5, 8)))
+  }
+}
