@@ -1,3 +1,4 @@
+package konopski.ninety.nine {
 object P16 extends App {
 
   def drop[T](n: Int, list: List[T]) = {
@@ -11,3 +12,4 @@ object P16 extends App {
 
 }
 
+}

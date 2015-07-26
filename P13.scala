@@ -1,3 +1,4 @@
+package konopski.ninety.nine {
 object P13 extends App {
 	
   def encodeDirect[T](list: List[T]) = {
@@ -22,4 +23,5 @@ object P13 extends App {
 
  println(encodeDirect(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e)))
 
+}
 }

@@ -1,3 +1,4 @@
+package konopski.ninety.nine {
 object P10 extends App {
 import P09._
 
@@ -8,4 +9,5 @@ import P09._
 
  println(encode(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e)))
 
+}
 }

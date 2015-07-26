@@ -1,3 +1,4 @@
+package konopski.ninety.nine {
 object P14 extends App {
 
   def duplicate[T](list: List[T]): List[T] = {
@@ -8,3 +9,4 @@ object P14 extends App {
 
 }
 
+}

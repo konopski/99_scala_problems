@@ -1,3 +1,4 @@
+package konopski.ninety.nine {
 object P12 extends App {
 
   def decode[T](list: List[(Int, T)]): List[T] = {
@@ -8,4 +9,5 @@ object P12 extends App {
 
   println(decode(List((4,'a), (1,'b), (2,'c), (2,'a), (1,'d), (4,'e))))
 
+}
 }
