@@ -8,5 +8,5 @@ running with sbt
 it's possible to run it with sbt calling something like this
 
 ```
-sbt "run-main P13"
+sbt "run-main konopski.ninety.nine.P13"
 ```
