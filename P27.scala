@@ -27,12 +27,16 @@ object P27 extends App {
 */
 
    val e = List[List[String]]()
-   val res = s.foldLeft((e, 0)) { (a, b ) => 
+   val res = s.foldLeft(( (e, l), 0)) { (a, b ) => 
      val n = a._2 + b
-     (a._1 :+ firstN(n, fromN(a._2, l)), n) 
-   }
-
-   println(res) ; 
+     println(b)
+     println(n)
+     //    (a._1._1 :+ firstN(n, fromN(a._2, l)) , n) 
+     println(split(b, a._1._2))
+     ((a._1._1, a._1._2) , n)
+   }._1
+   
+   println(res)
 }
 
 }
