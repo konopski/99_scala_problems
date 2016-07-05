@@ -3,6 +3,9 @@ package konopski.ninety.nine {
   class S99Int(val start: Int) {
     import S99Int._
 
+    def isPrime = {
+      (2 until this.start filter { this.start % _ == 0 }).length == 0 
+    } 
 
     def isCoprimeTo(i: Int) = {
       P32.gcd(this.start, i) == 1
