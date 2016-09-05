@@ -11,6 +11,15 @@ package konopski.ninety.nine {
       P32.gcd(this.start, i) == 1
     }
 
+    def primeFactors = {
+      val primes = (2 until this.start) filter { _.isPrime }
+      def banglaj(x: Int, l: List[Int]): Seq[Int] = {
+        val nc = primes filter { _ <= x } filter { x % _ == 0 }
+        if (nc.isEmpty) l
+        else banglaj( x / nc(0), l :+ nc(0) )
+      }
+      banglaj(this.start, List())
+    }
 
     def totient = {
         (1 to this.start filter { _.isCoprimeTo(this.start) } ).length   
