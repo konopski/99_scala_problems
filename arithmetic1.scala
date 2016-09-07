@@ -23,11 +23,23 @@ package konopski.ninety.nine {
       banglaj(this.start, List())
     } 
     
-    def primeFactorsMultiplicity() = encode(primeFactors()) 
+    def primeFactorsMultiplicity() = {
+      encode(primeFactors()) map { case (l,r) => (r, l) }
+    }
 
     def primeFactorsMultiplicityAsMap() = {
       primeFactorsMultiplicity() map { Map(_) }
     }
+
+    def phi() = {
+      def powr(x: Int, n: Int): Int = { 
+        if(n==0) 1
+        else if (n==1) x
+        else n*powr(x, n-1)
+      }
+      primeFactorsMultiplicity map { case (p,m) => (p - 1) * powr(p,m-1) } product
+    }
+    
   
     def totient() = {
         (1 to this.start filter { _.isCoprimeTo(this.start) } ).length   
