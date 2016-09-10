@@ -35,7 +35,7 @@ package konopski.ninety.nine {
       def powr(x: Int, n: Int): Int = { 
         if(n==0) 1
         else if (n==1) x
-        else n*powr(x, n-1)
+        else x*powr(x, n-1)
       }
       primeFactorsMultiplicity map { case (p,m) => (p - 1) * powr(p,m-1) } product
     }
