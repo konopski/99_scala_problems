@@ -44,6 +44,15 @@ package konopski.ninety.nine {
     def totient() = {
         (1 to this.start filter { _.isCoprimeTo(this.start) } ).length   
     }
+
+    def goldbach() = {
+       import P39._
+       for {
+           x <- listPrimesInRange(2 to this.start) 
+           y <- listPrimesInRange(x to this.start)
+           if x + y == this.start
+       } yield (x, y)
+    }
   }
 
   object S99Int { 
