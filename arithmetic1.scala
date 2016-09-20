@@ -50,7 +50,7 @@ package konopski.ninety.nine {
        for {
            x <- listPrimesInRange(2 to this.start) 
            y <- listPrimesInRange(x to this.start)
-           if x + y == this.start
+           if x + y == this.start && this.start % 2 == 0
        } yield (x, y)
     }
   }
