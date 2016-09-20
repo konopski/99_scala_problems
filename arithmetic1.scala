@@ -35,7 +35,7 @@ package konopski.ninety.nine {
       def powr(x: Int, n: Int): Int = { 
         if(n==0) 1
         else if (n==1) x
-        else x*powr(x, n-1)
+        else n*powr(x, n-1)
       }
       primeFactorsMultiplicity map { case (p,m) => (p - 1) * powr(p,m-1) } product
     }
@@ -48,9 +48,10 @@ package konopski.ninety.nine {
     def goldbach() = {
        import P39._
        for {
-           x <- listPrimesInRange(2 to this.start) 
-           y <- listPrimesInRange(x to this.start)
-           if x + y == this.start && this.start % 2 == 0
+           s <- List(this.start) if this.start % 2 == 0
+           x <- listPrimesInRange(2 to s) 
+           y <- listPrimesInRange(x to s)
+           if x + y == this.start
        } yield (x, y)
     }
   }
