@@ -13,7 +13,10 @@ object P42 extends App {
 
   def nand(p: Boolean, q: Boolean) = not(and(p, q))
 
-  def nandP(p: Boolean, q: Boolean) = if(p && q) false else true
+  def nandP(p: Boolean, q: Boolean) = (p, q) match {
+    case (true, true) => false
+    case (_, _) => true
+  }
 
   println(not(and(true, true)))
   println(or(false, true))
