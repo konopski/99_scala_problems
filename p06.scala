@@ -1,5 +1,5 @@
 package konopski.ninety.nine { 
-  object p06 {
+  object p06 extends App {
   import p05._
   import p06._
   import p04._
@@ -17,6 +17,6 @@ def isPalindrome[A](in: List[A]): Boolean = {
 
 
 
-isPalindrome(List(1, 2, 3, 2, 1))
+println(isPalindrome(List(1, 2, 3, 2, 1)))
   }
 }
