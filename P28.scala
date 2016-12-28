@@ -2,14 +2,14 @@ package konopski.ninety.nine {
 
 object P28 extends App {
 
-  private def sort[T](lists: List[T], lteq: (T,T) => Boolean): List[T] = { 
+  def sort[T](lists: List[T], lteq: (T,T) => Boolean): List[T] = { 
     lists match { 
       case x::xs =>  sort(xs.filter( { y:T => lteq(y, x) }), lteq)  ++ List( x ) ++  sort(xs.filter( { y:T => !lteq(y, x) }), lteq) 
       case List() => List()
     }
   }
 
-  def le[T] = {(x: (List[T], Int), y: (List[T], Int)) => x._2 <= y._2 }
+  private def le[T] = {(x: (List[T], Int), y: (List[T], Int)) => x._2 <= y._2 }
 
   def lsort[T](lists: List[List[T]]) = { 
     sort(lists map { l => (l, l.size) }, le).unzip._1
