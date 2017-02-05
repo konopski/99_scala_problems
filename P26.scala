@@ -11,9 +11,9 @@ object P26 extends App {
         //combinations n xs = head [ (++) (map (x:) (combinations (n-1) (filter (/=x) xs) )) (combinations n (filter (/=x) xs)) | x <- xs ]
 
         val empty: List[List[T]] = List()
-        list.foldLeft(empty) {(ac: List[List[T]], x: T) =>
+        list.foldLeft(empty) {(ac, x) =>
           
-           ((combinations(n-1, list filter { _ != x})) map { 
+           ((combinations(n-1, list filter { _ != x})) map {
              l: List[T] => x::l 
            } )++ (combinations(n, list filter { _ != x}))
         }
