@@ -28,7 +28,7 @@ object P50 extends App {
   println( huffman(List(("a", 45), ("b", 13), ("c", 12), ("d", 16), ("e", 9), ("f", 5))) )
 
   def min[T](elems: List[T], lt: (T,T) => Boolean ) = {
-    abstract class SearchStep
+    abstract class SearchStep
     case class NoMinFound extends SearchStep
     case class FoundMin(minimum: T, minIdx: Int) extends SearchStep
     
@@ -43,7 +43,7 @@ object P50 extends App {
             else FoundMin(minimum, minIdx)
         }
     }
-  }  
+  }
 
   // println( min( List(5,4,6,2,3), (l: Int, r: Int) => l < r ) )
 }
