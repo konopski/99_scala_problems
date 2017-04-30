@@ -27,23 +27,23 @@ object P50 extends App {
 
   println( huffman(List(("a", 45), ("b", 13), ("c", 12), ("d", 16), ("e", 9), ("f", 5))) )
 
-
- def min[T](elems: List[T], lt: (T,T) => Boolean ): Int = {
-
-   @annotation.tailrec
-   def min0(l: List[T], at: Int, minIdx: Int, minimum: Option[T]): Int = {
-     if(l.isEmpty) { minIdx }
-     else {
-       if(-1 == minIdx || lt(l.head, minimum.get) ) {
-           min0(l.tail, at+1, at, Some(l.head))
-       } else {
-           min0(l.tail, at+1, minIdx, minimum)
-       } 
-     }
-   }
-   
-   min0(elems, 0, -1, None)
- }
+  def min[T](elems: List[T], lt: (T,T) => Boolean ) = {
+    abstract class SearchStep
+    case class NoMinFound extends SearchStep
+    case class FoundMin(minimum: T, minIdx: Int) extends SearchStep
+    
+    val empty: SearchStep = NoMinFound()
+    (elems.zipWithIndex).foldLeft(empty) {
+      (acc: SearchStep, checkMe: (T, Int) ) =>
+        acc match {
+          case NoMinFound() =>
+            FoundMin(checkMe._1, checkMe._2)
+          case FoundMin(minimum, minIdx) =>
+            if( lt(checkMe._1, minimum) ) FoundMin(checkMe._1, checkMe._2)
+            else FoundMin(minimum, minIdx)
+        }
+    }
+  }  
 
   // println( min( List(5,4,6,2,3), (l: Int, r: Int) => l < r ) )
 }
