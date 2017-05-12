@@ -1,5 +1,5 @@
 package konopski.ninety.nine { 
-  object p07 {
+  object p07 extends App {
 def flatten(in: List[Any]): List[Any]= {
   def flatten0(in: List[Any], acc: List[Any]): List[Any] = {
     if(in.isEmpty) acc
