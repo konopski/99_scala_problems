@@ -11,6 +11,6 @@ package konopski.ninety.nine {
   }
   
   object Node {
-    def apply[T](value: T) = Node(value, End, End)
+    def apply[T](value: T): Node[T] = Node(value, End, End)
   }
 }
